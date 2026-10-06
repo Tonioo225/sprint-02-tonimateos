@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"TaskTest::testStatusCanChange":0.003,"TaskTest::testInvalidStatusDoesNotChangeTask":0,"TaskTest::testBlankTitleIsRejected":0,"TaskValidatorTest::testValidTaskNeedsNoOptionalAssignments":0,"TaskValidatorTest::testTitleLengthBoundary":0,"TaskValidatorTest::testUnknownSprintAndTeamAreRejected":0}}

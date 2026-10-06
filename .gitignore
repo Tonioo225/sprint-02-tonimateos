@@ -1,0 +1,6 @@
+/data/*.sqlite
+/data/*.sqlite-*
+/vendor/
+/.phpunit.cache/
+AGENTS.md
+REQUIREMENTS.md
