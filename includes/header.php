@@ -12,6 +12,7 @@
     <a class="navbar-brand" href="index.php">SprintBoard</a>
     <?php if (isAuthenticated()): ?>
     <div class="d-flex flex-wrap gap-3 align-items-center">
+        <a class="text-white" href="users.php">Usuaris</a>
         <a class="text-white" href="sprints.php">Esprints</a>
         <a class="text-white" href="teams.php">Equips</a>
         <a class="text-white" href="board.php">Tauler</a>
