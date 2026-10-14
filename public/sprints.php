@@ -8,6 +8,9 @@ $sprints = getDB()->query('SELECT * FROM sprints ORDER BY start_date DESC')->fet
 require __DIR__ . '/../includes/header.php';
 ?>
 <h1>Esprints</h1>
+<?php if (isTeacher()): ?>
+    <a href="sprint-create.php" class="btn btn-primary">Nou esprint</a>
+<?php endif; ?>
 <div class="list-group">
 <?php foreach ($sprints as $sprint): ?>
     <a class="list-group-item list-group-item-action" href="sprint.php?id=<?= (int) $sprint['id'] ?>">
