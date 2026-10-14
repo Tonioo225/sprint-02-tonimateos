@@ -26,7 +26,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($errors === []){
         $sprint = new Sprint($values['name'], $values['goal'], $values['start_date'], $values['end_date'],$values['status']);
         $stmt = $db->prepare('INSERT INTO sprints (name, goal, start_date, end_date, status) VALUES (?, ?, ?, ?, ?)');
-        $stmt -> execute([$sprint->getName(), $sprint->getGoal(), $sprint->getStartDate(),$sprint->getEndDate(),$sprint->getStatus()]);
+        $stmt -> execute([$sprint->getName(), $sprint->getGoal(), $sprint->getStartDate(),$sprint->getEndDate(), $sprint->getStatus()
+        ]);
         setFlash('success', 'Esprint creat correctament.');
         redirect('board.php');
     }
