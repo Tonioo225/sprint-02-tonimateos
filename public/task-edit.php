@@ -67,6 +67,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $errors[] = 'El responsable ha de pertànyer a l’equip en este esprint.';
         };
     }
+    if($errors === []){
+        $stmt = $db->prepare('UPDATE tasks SET title = ?, description = ?, sprint_id = ?, team_id = ?, user_id = ? WHERE id = ?');
+        $stmt -> execute([$values['title'], $values['description'], (int) $values['sprint_id'], $values['team_id'] === '' ? null : (int) $values['team_id'], $values['user_id'] === '' ? null : (int) $values['user_id'],$id ]);
+        header('Location: task.php?id=' . $id);
+        exit;
+    }
 }
 
 
