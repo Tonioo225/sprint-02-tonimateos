@@ -30,5 +30,6 @@ require __DIR__ . '/../includes/header.php';
 <?php endforeach; ?></ul>
 <?php if(isTeacher()): ?>
     <a href="sprint-edit.php?id=<?= (int) $sprint['id'] ?>" class="btn btn-primary">Edita el esprint</a>
+    <a href="sprint-delete.php?id=<?= (int) $sprint['id'] ?>" class="btn btn-danger">Borra el esprint</a>
 <?php endif; ?>
 <?php require __DIR__ . '/../includes/footer.php'; ?>
