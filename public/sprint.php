@@ -28,4 +28,7 @@ require __DIR__ . '/../includes/header.php';
 <ul><?php foreach ($tasks as $task): ?>
     <li><a href="task.php?id=<?= (int) $task['id'] ?>"><?= h($task['title']) ?></a> <?= statusBadge($task['status']) ?></li>
 <?php endforeach; ?></ul>
+<?php if(isTeacher()): ?>
+    <a href="sprint-edit.php?id=<?= (int) $sprint['id'] ?>" class="btn btn-primary">Edita el esprint</a>
+<?php endif; ?>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

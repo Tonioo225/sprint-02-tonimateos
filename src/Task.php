@@ -21,6 +21,7 @@ final class Task
         if (trim($title) === '') {
             throw new InvalidArgumentException('Títol de tasca no vàlid.');
         }
+        
 
         $this->setStatus($status);
     }
