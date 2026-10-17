@@ -1,4 +1,6 @@
-<?php declare(strict_types=1); ?>
+<?php declare(strict_types=1);
+$flashes = getFlashes();
+?>
 <!doctype html>
 <html lang="ca">
 <head>
@@ -26,4 +28,4 @@
     <?php endif; ?>
 </div></nav>
 <main class="container pb-5">
-<?php renderFlashes(); ?>
+<?php require __DIR__ . '/../templates/layout/flashes.php'; ?>

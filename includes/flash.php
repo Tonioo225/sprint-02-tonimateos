@@ -7,11 +7,9 @@ function setFlash(string $type, string $message): void
     $_SESSION['flash'][] = [$type, $message];
 }
 
-function renderFlashes(): void
+function getFlashes(): array
 {
-    foreach ($_SESSION['flash'] ?? [] as [$type, $message]) {
-        $class = $type === 'success' ? 'success' : 'danger';
-        print '<div class="alert alert-' . $class . '">' . h($message) . '</div>';
-    }
+    $flashes = $_SESSION['flash'] ?? [];
     unset($_SESSION['flash']);
+    return $flashes;
 }
