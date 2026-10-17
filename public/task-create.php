@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     if ($errors === []) {
+        try{
         $task = new Task(
             $values['title'], $values['description'], (int) $values['sprint_id'],
             $values['team_id'] === '' ? null : (int) $values['team_id'],
@@ -63,6 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
         setFlash('success', 'Tasca creada correctament.');
         redirect('board.php');
+        }catch (Throwable $exception) {
+            applicationLogger()->error('No s’ha pogut inicialitzar la base de dades.', ['exception' => $exception]);
+            http_response_code(500);
+            exit('Error intern. Torna-ho a provar més tard.');
+        }
     }
 }
 require __DIR__ . '/../includes/header.php';
